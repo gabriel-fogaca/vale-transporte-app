@@ -1,0 +1,41 @@
+<mat-card>
+
+    <h1>{{btnTitulo}}</h1>
+
+    <form [formGroup]="funcionarioForm" (ngSubmit)="submit()" #formDit="ngForm">
+
+        <input type="hidden" formControlName="id" >
+
+
+        <div class="input_box">
+            <mat-form-field>
+                <mat-label for="">Nome:</mat-label>
+                <input matInput type="text" formControlName="nome" placeholder="Insira o nome!" required>
+            </mat-form-field>
+        </div>
+
+        <div class="input_box">
+            <mat-form-field>
+                <mat-label for="">Escala:</mat-label>
+                <mat-select id="escala" formControlName = "escala" required="">
+                    <mat-option value="CincoxDois">5x2</mat-option>
+                    <mat-option value="SeisxUm">6x1</mat-option>
+                    <mat-option value="SeisxDois">6x2</mat-option>
+                    <mat-option value="DozeTrintaSeis">36x12</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="input_box">
+            <mat-form-field>
+                <mat-label for="">Custo Diário:</mat-label>
+                <input matInput type="text" formControlName="custoDiario" placeholder="Insira o custo diário!" required>
+            </mat-form-field>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" [disabled]="!funcionarioForm.valid" mat-flat-button color="primary">{{btnAcao}}</button>
+            <button routerLink="" mat-flat-button color="">Voltar</button>
+        </div>
+    </form>
+</mat-card>

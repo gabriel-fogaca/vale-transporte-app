@@ -1,0 +1,51 @@
+<mat-card>
+<div>
+    <h1>Detalhes Funcionários</h1>
+</div>
+
+<div>
+    <form *ngIf="funcionario">
+
+        <div class="input_box">
+            <mat-form-field>
+                <mat-label for="">Nome</mat-label>
+                <input matInput type="text" value = "{{funcionario.nome}}" disabled>
+            </mat-form-field>
+        </div>
+
+        <div class="input_box">
+            <mat-form-field>
+                <mat-label for="">Escala:</mat-label>
+                <input matInput type="text" value = "{{funcionario.escala}}" disabled>
+            </mat-form-field>
+        </div>
+
+        <div class="input_box">
+            <mat-form-field>
+                <mat-label for="">Custo Diário:</mat-label>
+                <input matInput type="text" value = "{{funcionario.custoDiario}}" disabled>
+            </mat-form-field>
+        </div>
+
+        <div class="input_box">
+            <mat-form-field>
+                <mat-label for="">Situação</mat-label>
+                <input matInput type="text" value = "{{funcionario.ativo == true ? 'Ativo' : 'Inativo'}}" disabled>
+            </mat-form-field> 
+        </div>
+
+        <div class="input_box">
+            <mat-form-field>
+                <mat-label for="">Custo Total</mat-label>
+                <input matInput type="text" value = "{{funcionario.custoTotal}}" disabled>
+            </mat-form-field> 
+        </div>
+
+        <div class="btn-box">
+            <button (click) = "InativaFuncionario()" mat-flat-button color="warn">Inativar Usuário</button>
+            <button routerLink="" mat-flat-button color="">Voltar</button>
+        </div>
+
+    </form>
+</div>
+</mat-card>
